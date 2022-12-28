@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, forwardRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { ButtoryLevel } from './Hooks.styled';
 import { useBattery } from 'react-use';
 import { BsBatteryCharging, BsBatteryFull } from 'react-icons/bs';
