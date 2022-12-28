@@ -6,9 +6,12 @@ export const Articlelist = ({ items }) => {
   console.log(items);
   return (
     <ul>
-      {items.map(({ objectID, url, title, author, points }) => (
+      {items.map(({ objectID, url, title, author, points, _tags }) => (
         <li key={objectID}>
-          Author: {author}({points})
+          <b>
+            Author: {author}({points})
+          </b>
+          {} Tags - {_tags}
           <br />
           <a href={url} target="_blank" rel="noreferrer noopener">
             {title}

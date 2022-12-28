@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import { Articlelist } from 'Components/ArticleList';
-import axios from 'axios';
+import { TestHooks } from 'Components/HooksTest/Hooks';
+import { UserMenu } from 'Components/hooks/UserMenu';
+import { Player } from 'Components/Player';
+import { Counter } from 'Components/Counter';
 
-export class App extends Component {
-  state = {
-    articles: [],
-  };
+export const App = () => {
+  return (
+    <>
+      <TestHooks />
+      <UserMenu />
 
-  async componentDidMount() {
-    const { data } = await axios.get('/search?query=react');
-    this.setState({ articles: data.hits });
-  }
+      <Player source="http://media.w3.org/2010/05/sintel/trailer.mp4" />
 
-  render() {
-    const { articles } = this.state;
-
-    return <>{articles.length > 0 ? <Articlelist items={articles} /> : null}</>;
-  }
-}
+      <Counter />
+    </>
+  );
+};
